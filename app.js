@@ -41,16 +41,24 @@ const Player = ({name, score}) => {
   );
 }
 
-const Counter = (props) => {
+class Counter extends React.Component {
 
-  
-  return (
-    <div className="counter">
-      <button className="counter-action decrement"> - </button>
-      <span className="counter-score">{ props.score }</span>
-      <button className="counter-action increment"> + </button>
-    </div>
-  );
+  constructor() {
+    super()
+    this.state = {
+      score: 0
+    };
+  }
+
+  render () {
+    return (
+      <div className="counter">
+        <button className="counter-action decrement"> - </button>
+        <span className="counter-score">{ this.props.score }</span>
+        <button className="counter-action increment"> + </button>
+      </div>
+    );
+  }
 }
 
 const App = (props) => {
